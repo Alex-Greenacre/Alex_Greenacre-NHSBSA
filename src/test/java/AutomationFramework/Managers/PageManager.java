@@ -1,5 +1,7 @@
 package AutomationFramework.Managers;
 
+import AutomationFramework.Page.IsYourGpPracticeInScotOrWales_Page;
+import AutomationFramework.Page.NorthernIslandKickout_Page;
 import AutomationFramework.Page.Start_Page;
 import AutomationFramework.Page.WhichCountryDoYouLiveIn_Page;
 import AutomationFramework.StepDefs.WhichCountryDoYouLiveIn_StepDef;
@@ -12,6 +14,8 @@ public class PageManager {
 
     Start_Page start_page;
     WhichCountryDoYouLiveIn_Page whichCountryDoYouLiveIn_page;
+    IsYourGpPracticeInScotOrWales_Page isYourGpPracticeInScotOrWales_page;
+    NorthernIslandKickout_Page northernIslandKickout_page;
 
     //Start Page
     public Start_Page getStartPage(){
@@ -26,5 +30,17 @@ public class PageManager {
             this.whichCountryDoYouLiveIn_page = new WhichCountryDoYouLiveIn_Page(this.driver);
         }
         return this.whichCountryDoYouLiveIn_page;
+    }
+    public IsYourGpPracticeInScotOrWales_Page getisYourGpPracticeInScotOrWalesPage(){
+        if(isYourGpPracticeInScotOrWales_page==null){
+            this.isYourGpPracticeInScotOrWales_page = new IsYourGpPracticeInScotOrWales_Page(this.driver);
+        }
+        return this.isYourGpPracticeInScotOrWales_page;
+    }
+    public NorthernIslandKickout_Page getNorthernIslandKickout_page(){
+        if(northernIslandKickout_page==null){
+            this.northernIslandKickout_page = new NorthernIslandKickout_Page(this.driver);
+        }
+        return this.northernIslandKickout_page;
     }
 }
